@@ -3,4 +3,6 @@ obj-$(CONFIG_SND_SOC_SDM660_CDC) += snd-soc-sdm660-cdc.o sdm660-cdc-irq.o
 snd-soc-tas2557-objs := tas2557-core.o tas2557-regmap.o tas2557-codec.o tas2557-misc.o tiload.o
 obj-$(CONFIG_SND_SOC_TAS2557) += snd-soc-tas2557.o
 
-subdir-ccflags-y := $(call cc-disable-warning, shift-overflow)
+subdir-ccflags-y += \
+	-Wno-shift-overflow \
+	-Wno-parentheses-equality
